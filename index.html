@@ -4,178 +4,198 @@
   <meta charset="UTF-8">
   <title>Sri Visnu S | Mechanical Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      margin: 0;
-      background: #f4f6f8;
-      color: #333;
+    :root{
+      --bg:#0a0f1f;
+      --card:#111834;
+      --accent:#ff7a18;
+      --accent2:#32d2aa;
+      --text:#eaeaf0;
+      --muted:#a1a1b3;
     }
-    header {
-      background: #0f172a;
-      color: #fff;
-      padding: 40px 20px;
-      text-align: center;
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:'Inter',sans-serif;
+      background:radial-gradient(1000px 400px at 10% -10%,rgba(255,122,24,.25),transparent),
+                 radial-gradient(900px 400px at 90% 10%,rgba(50,210,170,.25),transparent),
+                 var(--bg);
+      color:var(--text);
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.4rem;
+    .wrap{max-width:1150px;margin:auto;padding:28px}
+
+    /* NAV */
+    nav{
+      display:flex;justify-content:space-between;align-items:center;
+      position:sticky;top:0;z-index:10;
+      background:rgba(10,15,31,.8);backdrop-filter:blur(10px);
+      padding:14px 28px;border-radius:18px;margin-bottom:30px
     }
-    header p {
-      margin-top: 10px;
-      font-size: 1.1rem;
+    nav strong{font-size:1.2rem;letter-spacing:.5px}
+    nav a{color:var(--muted);margin-left:18px;text-decoration:none;font-weight:600}
+    nav a:hover{color:var(--accent)}
+
+    /* HERO */
+    .hero{
+      display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:center;
+      margin-bottom:60px
     }
-    section {
-      max-width: 950px;
-      margin: 30px auto;
-      background: #fff;
-      padding: 25px;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    .hero-box{
+      background:linear-gradient(135deg,rgba(255,122,24,.12),rgba(50,210,170,.12));
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:26px;padding:42px
     }
-    h2 {
-      color: #0f172a;
-      border-bottom: 2px solid #0f172a;
-      padding-bottom: 6px;
+    .tag{display:inline-block;background:rgba(255,122,24,.15);color:var(--accent);
+      padding:6px 14px;border-radius:999px;font-weight:700;font-size:.85rem}
+    h1{font-size:3.2rem;margin:14px 0}
+    .hero p{color:var(--muted);max-width:520px}
+    .cta a{
+      display:inline-block;margin-top:20px;margin-right:12px;
+      padding:12px 20px;border-radius:14px;text-decoration:none;font-weight:700
     }
-    ul {
-      padding-left: 20px;
+    .primary{background:var(--accent);color:#1b0d03}
+    .outline{border:1px solid rgba(255,255,255,.2);color:var(--text)}
+
+    .profile{
+      background:var(--card);border:1px solid rgba(255,255,255,.08);
+      border-radius:26px;padding:34px
     }
-    .btn {
-      display: inline-block;
-      padding: 10px 18px;
-      margin-right: 10px;
-      background: #2563eb;
-      color: white;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
+    .profile h3{margin-top:0}
+
+    /* SECTIONS */
+    section{margin-bottom:60px}
+    h2{font-size:2.1rem;margin-bottom:18px}
+
+    .grid{display:grid;gap:22px}
+    .grid-2{grid-template-columns:repeat(2,1fr)}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+
+    .card{
+      background:var(--card);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:22px;padding:26px
     }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #0f172a;
-      color: white;
-      margin-top: 40px;
+
+    .timeline{position:relative;padding-left:28px}
+    .timeline::before{content:'';position:absolute;left:6px;top:0;bottom:0;width:2px;
+      background:linear-gradient(var(--accent),var(--accent2))}
+    .time{margin-bottom:22px;position:relative}
+    .time::before{content:'';position:absolute;left:-2px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--accent)}
+
+    .pill{display:inline-block;margin:6px 6px 0 0;padding:6px 12px;border-radius:999px;
+      background:rgba(50,210,170,.15);color:var(--accent2);font-weight:600;font-size:.85rem}
+
+    footer{text-align:center;color:var(--muted);padding:30px 0}
+
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr}
+      h1{font-size:2.4rem}
+      nav{flex-direction:column;gap:10px}
     }
   </style>
 </head>
-
 <body>
+  <div class="wrap">
 
-<header>
-  <h1>Sri Visnu S</h1>
-  <p>Undergraduate – Mechanical Engineering</p>
-</header>
+    <nav>
+      <strong>Sri Visnu S</strong>
+      <div>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
 
-<section>
-  <h2>Summary</h2>
-  <p>
-    Highly motivated Mechanical Engineering student with a strong technical
-    foundation in design, manufacturing, and engineering fundamentals.
-    Proficient in CAD tools and mechanical systems, with a keen interest in
-    learning new technologies and contributing effectively within a
-    collaborative team environment.
-  </p>
-</section>
+    <div class="hero">
+      <div class="hero-box">
+        <span class="tag">Mechanical Engineering</span>
+        <h1>Designing Practical<br>Engineering Solutions</h1>
+        <p>
+          Undergraduate Mechanical Engineer with a strong background in tool & die,
+          manufacturing systems, and CAD-based design. Passionate about building
+          efficient, real-world mechanical solutions.
+        </p>
+        <div class="cta">
+          <a class="primary" href="SRI_VISNU_S_RESUME.pdf" target="_blank">View Resume</a>
+          <a class="outline" href="SRI_VISNU_S_RESUME.pdf" download>Download CV</a>
+        </div>
+      </div>
 
-<section>
-  <h2>Education</h2>
-  <ul>
-    <li>
-      <strong>Bachelor of Engineering – Mechanical Engineering</strong><br>
-      College of Engineering, Guindy, Chennai<br>
-      <em>Expected: Aug 2027</em>
-    </li>
-    <br>
-    <li>
-      <strong>Diploma – Mechanical Engineering (Tool & Die)</strong><br>
-      Institute of Tool Engineering, Dindigul<br>
-      <em>April 2024</em>
-    </li>
-    <br>
-    <li>
-      <strong>SSLC</strong><br>
-      MSP Solainadar Memorial Hr. Sec. School, Dindigul<br>
-      <em>March 2021</em>
-    </li>
-  </ul>
-</section>
+      <div class="profile">
+        <h3>Quick Info</h3>
+        <p><strong>Email:</strong> srivisnusankar@gmail.com</p>
+        <p><strong>Phone:</strong> +91 8015772005</p>
+        <p><strong>Location:</strong> Dindigul, Tamil Nadu</p>
+        <p><strong>Languages:</strong> English, Tamil, Sourashtra</p>
+      </div>
+    </div>
 
-<section>
-  <h2>Projects</h2>
-  <ul>
-    <li>
-      <strong>Multi-Cavity Injection Mould Design</strong><br>
-      Designed and developed a multi-cavity injection mould for polypropylene (PP)
-      components using a stripper plate ejection system. Included cavity
-      calculation, runner and gate design, shrinkage allowance, clamping force
-      estimation, and mould optimization.
-    </li>
-    <br>
-    <li>
-      <strong>Multi-Directional Rotating Truck Trailer</strong><br>
-      Designed and modeled a rotating truck trailer capable of unloading materials
-      in left, right, and rear directions. Focused on CAD modeling, mechanism
-      selection, stability, safety, and operational efficiency.
-    </li>
-  </ul>
-</section>
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="card">
+        Highly motivated Mechanical Engineering student with hands-on exposure to
+        mould design, manufacturing calculations, and CAD modeling. Known for
+        discipline, teamwork, and a problem-solving mindset.
+      </div>
+    </section>
 
-<section>
-  <h2>Skills</h2>
-  <ul>
-    <li>AutoCAD, SolidWorks, CREO</li>
-    <li>Manufacturing & Tool Design</li>
-    <li>MS Office, Windows</li>
-    <li>Project Management</li>
-    <li>Python (Basic)</li>
-    <li>Teamwork & Communication</li>
-  </ul>
-</section>
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Multi-Cavity Injection Mould</h3>
+          <p>
+            Designed a PP mould with stripper plate ejection including cavity
+            calculation, runner & gate design, shrinkage allowance, and clamping
+            force estimation.
+          </p>
+          <span class="pill">Mould Design</span><span class="pill">Manufacturing</span>
+        </div>
+        <div class="card">
+          <h3>Multi-Directional Rotating Trailer</h3>
+          <p>
+            CAD-based design and simulation of a truck trailer capable of unloading
+            materials in left, right, and rear directions to improve maneuverability.
+          </p>
+          <span class="pill">Mechanisms</span><span class="pill">Simulation</span>
+        </div>
+      </div>
+    </section>
 
-<section>
-  <h2>Certifications</h2>
-  <ul>
-    <li>Diploma in Mechanical Engineering (Tool & Die)</li>
-    <li>3D Printing – 1 Week Internship</li>
-  </ul>
-</section>
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="card">
+        <span class="pill">AutoCAD</span><span class="pill">SolidWorks</span>
+        <span class="pill">CREO</span><span class="pill">Tool Design</span>
+        <span class="pill">Manufacturing</span><span class="pill">MS Office</span>
+        <span class="pill">Python (Basic)</span>
+      </div>
+    </section>
 
-<section>
-  <h2>Languages</h2>
-  <ul>
-    <li>English – Fluent</li>
-    <li>Tamil – Fluent</li>
-    <li>Sourashtra – Native</li>
-  </ul>
-</section>
+    <section id="resume">
+      <h2>Resume</h2>
+      <div class="card">
+        <p>You can view my resume online or download a copy.</p>
+        <a class="primary" href="SRI_VISNU_S_RESUME.pdf" target="_blank">👀 View Resume</a>
+        <a class="outline" href="SRI_VISNU_S_RESUME.pdf" download>⬇ Download Resume</a>
+        <p style="margin-top:10px;color:var(--muted)">Direct link: https://sri-visnu.github.io/SRI_VISNU_S_RESUME.pdf</p>
+      </div>
+    </section>
 
-<section>
-  <h2>Hobbies</h2>
-  <ul>
-    <li>Photography & Painting</li>
-    <li>Cricket & Badminton</li>
-    <li>Reading & Gym</li>
-  </ul>
-</section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="card">
+        <p>Email: srivisnusankar@gmail.com</p>
+        <p>Phone: +91 8015772005</p>
+        <p>Location: Dindigul, Tamil Nadu</p>
+      </div>
+    </section>
 
-<section>
-  <h2>Resume</h2>
-  <a class="btn" href="SRI_VISNU_S_RESUME.pdf" target="_blank">👀 View Resume</a>
-  <a class="btn" href="SRI_VISNU_S_RESUME.pdf" download>⬇ Download Resume</a>
-</section>
+    <footer>© 2026 Sri Visnu S | Mechanical Engineer</footer>
 
-<section>
-  <h2>Contact</h2>
-  <p><strong>Email:</strong> srivisnusankar@gmail.com</p>
-  <p><strong>Phone:</strong> +91 8015772005</p>
-  <p><strong>Address:</strong> Dindigul, Tamil Nadu</p>
-</section>
-
-<footer>
-  © 2026 Sri Visnu S
-</footer>
-
+  </div>
 </body>
 </html>
