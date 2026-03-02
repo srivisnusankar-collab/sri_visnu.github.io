@@ -3,72 +3,77 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sri Visnu | Portfolio</title>
+<title>Sri Visnu S | Mechanical Engineering Portfolio</title>
 
 <style>
 :root{
   --bg:#0f172a;
   --card:#1e293b;
-  --accent:#ff7a00;
-  --text:#f1f5f9;
+  --accent:#38bdf8;
+  --text:#e2e8f0;
   --muted:#94a3b8;
 }
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI, sans-serif}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
 body{background:var(--bg);color:var(--text);line-height:1.6}
 section{padding:80px 10%}
-h2{font-size:32px;margin-bottom:20px;color:var(--accent)}
+h1,h2,h3{margin-bottom:15px}
+h2{color:var(--accent);font-size:32px}
+
+/* NAVBAR */
+nav{
+  position:fixed;
+  width:100%;
+  top:0;
+  background:#0f172a;
+  padding:15px 10%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #1e293b;
+  z-index:1000;
+}
+nav a{color:var(--text);margin-left:20px;text-decoration:none;font-weight:500}
+nav a:hover{color:var(--accent)}
 
 /* HERO */
 .hero{
+  min-height:100vh;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  min-height:100vh;
+  padding-top:100px;
 }
-.hero-text h1{
-  font-size:56px;
-  margin-bottom:20px;
-}
-.hero-text p{
-  color:var(--muted);
-  max-width:500px;
-  margin-bottom:30px;
-}
+.hero-text h1{font-size:58px}
+.hero-text p{color:var(--muted);max-width:500px;margin:20px 0}
 .btn{
   display:inline-block;
   padding:14px 28px;
   border-radius:8px;
-  text-decoration:none;
+  font-weight:bold;
   margin-right:15px;
-  font-weight:600;
+  text-decoration:none;
 }
-.primary{background:var(--accent);color:black}
+.primary{background:var(--accent);color:#0f172a}
 .outline{border:2px solid var(--accent);color:var(--accent)}
-
 .hero img{
-  width:320px;
+  width:300px;
   border-radius:20px;
-  box-shadow:0 20px 40px rgba(0,0,0,0.6);
+  box-shadow:0 20px 40px rgba(0,0,0,0.5);
 }
 
-/* CARDS */
+/* CARD */
 .card{
   background:var(--card);
   padding:25px;
-  border-radius:16px;
+  border-radius:15px;
   margin-top:20px;
 }
 
-.skills-grid{
+/* GRID */
+.grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:20px;
-}
-
-.project-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:20px;
 }
 
@@ -76,92 +81,98 @@ footer{
   text-align:center;
   padding:30px;
   color:var(--muted);
-  border-top:1px solid #334155;
+  border-top:1px solid #1e293b;
+}
+
+@media(max-width:900px){
+  .hero{flex-direction:column;text-align:center}
+  .hero img{margin-top:40px}
 }
 </style>
 </head>
 <body>
 
-<!-- HERO SECTION -->
+<!-- NAVIGATION -->
+<nav>
+  <div><strong>Sri Visnu S</strong></div>
+  <div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
 <section class="hero">
   <div class="hero-text">
-    <h1>Sri Visnu S</h1>
-    <p>Mechanical Engineering Undergraduate (3rd Year – 6th Semester) passionate about Mechanical Design, CAD modelling and Product Development.</p>
+    <h1>Mechanical Engineering<br>Undergraduate</h1>
+    <p>3rd Year (6th Semester) student at College of Engineering, Guindy, Anna University. Passionate about Mechanical Design, CAD Modelling and Manufacturing Systems.</p>
 
     <a href="SRI_VISNU_S_RESUME.pdf" target="_blank" class="btn primary">👀 View Resume</a>
-    <a href="SRI_VISNU_S_RESUME.pdf" download class="btn outline">⬇ Download CV</a>
+    <a href="SRI_VISNU_S_RESUME.pdf" download class="btn outline">⬇ Download Resume</a>
   </div>
 
   <img src="profile.jpg" alt="Sri Visnu Profile Photo">
 </section>
 
 <!-- ABOUT -->
-<section>
-  <h2>About Me</h2>
+<section id="about">
+  <h2>Profile Summary</h2>
   <div class="card">
-    I am currently pursuing my 3rd year in Mechanical Engineering with a strong interest in mechanical design and product development. I enjoy transforming ideas into practical designs using CAD tools and continuously improving my technical skills to prepare for design-oriented roles.
+    Mechanical Engineering undergraduate with strong fundamentals in design and manufacturing. Experienced in mould design and mechanism development through academic projects. Proficient in AutoCAD, SolidWorks, CREO and Inventor with practical exposure to fabrication processes and welding basics. Seeking opportunities in mechanical design, production and manufacturing to apply engineering knowledge in real-world environments.
   </div>
 </section>
 
 <!-- SKILLS -->
-<section>
+<section id="skills">
   <h2>Skills</h2>
-  <div class="skills-grid">
+  <div class="grid">
     <div class="card">🛠 Mechanical Design</div>
     <div class="card">📐 AutoCAD</div>
     <div class="card">⚙ SolidWorks</div>
     <div class="card">🔩 CREO</div>
+    <div class="card">🧩 Inventor</div>
     <div class="card">🏭 Manufacturing Processes</div>
-    <div class="card">📊 Engineering Analysis</div>
+    <div class="card">💻 MS Office</div>
+    <div class="card">🐍 Python (Basic)</div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Multi-Cavity Injection Mould</h3>
+      <p>Designed polypropylene mould using stripper plate ejection system including cavity calculation, runner and gate design, shrinkage allowance and clamping force estimation.</p>
+    </div>
+
+    <div class="card">
+      <h3>Multi-Directional Rotating Trailer</h3>
+      <p>Designed and modeled a trailer capable of unloading materials in left, right and rear directions with focus on mechanism selection, safety and stability analysis.</p>
+    </div>
   </div>
 </section>
 
 <!-- HOBBIES -->
 <section>
   <h2>Hobbies</h2>
-  <div class="skills-grid">
-    <div class="card">📚 Learning New Design Concepts</div>
-    <div class="card">🛠 Exploring CAD Tools</div>
-    <div class="card">🏏 Playing Cricket</div>
-    <div class="card">🎧 Listening to Music</div>
-    <div class="card">📖 Reading Technical Articles</div>
-    <div class="card">🚴 Fitness & Cycling</div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section>
-  <h2>Projects</h2>
-  <div class="project-grid">
-    <div class="card">
-      <h3>WAAM Thermal Analysis</h3>
-      <p>Thermal behavior analysis in Wire Arc Additive Manufacturing under professor guidance.</p>
-    </div>
-
-    <div class="card">
-      <h3>Pneumatic Hand Gripper</h3>
-      <p>Designed and analyzed a pneumatic-based gripping mechanism.</p>
-    </div>
-
-    <div class="card">
-      <h3>Eco-Friendly Packaging</h3>
-      <p>Developed sustainable packaging solutions focusing on material efficiency.</p>
-    </div>
-
-    <div class="card">
-      <h3>Predictive Maintenance Simulation</h3>
-      <p>Simulated maintenance strategies using engineering data models.</p>
-    </div>
+  <div class="grid">
+    <div class="card">📚 Learning Design Concepts</div>
+    <div class="card">🏏 Cricket</div>
+    <div class="card">🚴 Cycling</div>
+    <div class="card">🎧 Technical Podcasts</div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section>
+<section id="contact">
   <h2>Contact</h2>
   <div class="card">
-    📧 Email: <a href="mailto:srivisnusankar@gmail.com" style="color:#ff7a00; text-decoration:none;">srivisnusankar@gmail.com</a> <br><br>
-    📱 Phone: <a href="tel:+918015772005" style="color:#ff7a00; text-decoration:none;">+91 80157 72005</a> <br><br>
-    🔗 LinkedIn: <a href="https://www.linkedin.com/in/sri-visnu-s-20b4ba211" target="_blank" style="color:#ff7a00; text-decoration:none;">linkedin.com/in/sri-visnu-s-20b4ba211</a>
+    📧 Email: <a href="mailto:srivisnusankar@gmail.com" style="color:#38bdf8; text-decoration:none;">srivisnusankar@gmail.com</a><br><br>
+    📱 Phone: <a href="tel:+918015772005" style="color:#38bdf8; text-decoration:none;">+91 8015772005</a><br><br>
+    🔗 LinkedIn: <a href="https://www.linkedin.com/in/sri-visnu-s-20b4ba211" target="_blank" style="color:#38bdf8; text-decoration:none;">linkedin.com/in/sri-visnu-s-20b4ba211</a>
   </div>
 </section>
 
@@ -171,4 +182,3 @@ footer{
 
 </body>
 </html>
-
