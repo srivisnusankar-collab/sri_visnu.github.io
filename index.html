@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sri Visnu S | Portfolio</title>
+<title>Sri Visnu S | Mechanical Engineering Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -26,117 +26,124 @@ nav{
   padding:15px 12%;display:flex;justify-content:space-between;
   align-items:center;border-bottom:1px solid #222;z-index:1000;
 }
-nav a{color:var(--text);text-decoration:none;margin-left:20px}
+nav a{color:var(--text);text-decoration:none;margin-left:22px;transition:0.3s}
 nav a:hover{color:var(--blue)}
 
 /* HERO */
 .hero{
   min-height:100vh;
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:center;
+  gap:80px;
   padding:0 10%;
-  gap:60px;
-}
-
-/* ROBOT */
-.robot{
-  position:relative;
-  width:200px;
-  animation:float 3s ease-in-out infinite alternate;
-}
-
-.head{
-  width:120px;height:120px;
-  background:#1c1c1c;
-  border-radius:50%;
-  border:4px solid var(--gold);
-  margin:auto;
   position:relative;
 }
 
-.eye{
-  width:20px;height:20px;
-  background:var(--blue);
-  border-radius:50%;
+/* Animated Glow Line */
+.hero::before{
+  content:"";
   position:absolute;
-  top:40px;
+  bottom:60px;
+  width:60%;
+  height:3px;
+  background:linear-gradient(90deg,var(--gold),var(--blue));
+  animation:glowline 3s infinite alternate;
 }
 
-.eye.left{left:30px}
-.eye.right{right:30px}
-
-.body{
-  width:140px;height:160px;
-  background:#1c1c1c;
-  border-radius:20px;
-  margin:10px auto;
-  border:4px solid var(--gold);
+@keyframes glowline{
+  from{opacity:0.3;width:40%}
+  to{opacity:1;width:70%}
 }
 
-.arm{
-  width:20px;height:100px;
-  background:#1c1c1c;
-  position:absolute;
-  top:130px;
-  left:-30px;
-  transform-origin:top;
-  animation:wave 1.5s infinite alternate;
-}
-
-@keyframes wave{
-  0%{transform:rotate(0deg)}
-  100%{transform:rotate(30deg)}
+/* Robot */
+.robot-img{
+  width:380px;
+  animation:float 4s ease-in-out infinite alternate;
+  filter:drop-shadow(0 0 25px rgba(77,166,255,0.6));
 }
 
 @keyframes float{
   from{transform:translateY(0)}
-  to{transform:translateY(-15px)}
+  to{transform:translateY(-25px)}
 }
 
-/* HERO TEXT */
+/* Text Side */
+.hero-text{
+  max-width:550px;
+}
+
 .hero-text h1{
   font-size:3rem;
   color:var(--gold);
-  animation:fadeIn 2s ease forwards;
+  opacity:0;
+  transform:translateX(50px);
+  animation:slideIn 1.5s forwards;
 }
 
 .hero-text h2{
-  margin-top:10px;
-  font-weight:400;
+  margin-top:15px;
   color:var(--blue);
+  font-weight:400;
+  opacity:0;
+  animation:fadeUp 2s forwards;
 }
 
 .hero-text p{
   margin-top:20px;
   color:var(--muted);
-  max-width:500px;
+  opacity:0;
+  animation:fadeUp 2.5s forwards;
 }
 
-@keyframes fadeIn{
-  from{opacity:0;transform:translateX(40px)}
+@keyframes slideIn{
   to{opacity:1;transform:translateX(0)}
 }
 
-/* SECTIONS */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* Sections */
 section{
-  padding:80px 12%;
+  padding:100px 12%;
+  position:relative;
 }
 
 section h2{
+  font-size:2.5rem;
   color:var(--gold);
-  margin-bottom:20px;
+  margin-bottom:10px;
+  position:relative;
 }
 
+section h2::after{
+  content:"";
+  display:block;
+  width:80px;
+  height:4px;
+  margin-top:10px;
+  background:linear-gradient(90deg,var(--gold),var(--blue));
+  animation:glowline 3s infinite alternate;
+}
+
+/* Cards */
 .card{
   background:var(--card);
-  padding:25px;
-  border-radius:15px;
+  padding:30px;
+  border-radius:18px;
   border:1px solid #222;
-  margin-bottom:20px;
+  margin-top:25px;
   opacity:0;
   transform:translateY(40px);
-  transition:0.8s;
+  transition:1s;
+  box-shadow:0 0 20px rgba(0,0,0,0.5);
+}
+
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 25px rgba(77,166,255,0.3);
 }
 
 .card.show{
@@ -144,11 +151,25 @@ section h2{
   transform:translateY(0);
 }
 
+/* Grid */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+/* Footer */
 footer{
   text-align:center;
-  padding:30px;
+  padding:40px;
   color:var(--muted);
   border-top:1px solid #222;
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .hero{flex-direction:column;text-align:center}
+  .robot-img{width:250px}
 }
 </style>
 </head>
@@ -159,70 +180,74 @@ footer{
   <div style="color:var(--gold);font-weight:600">Sri Visnu S</div>
   <div>
     <a href="#about">About</a>
+    <a href="#education">Education</a>
     <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#hobbies">Hobbies</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
 
-<!-- HERO -->
-<div class="hero">
-
-  <div class="robot">
-    <div class="head">
-      <div class="eye left"></div>
-      <div class="eye right"></div>
-    </div>
-    <div class="body"></div>
-    <div class="arm"></div>
-  </div>
+<section class="hero">
+  <img src="robot.png" alt="Robot Welcome" class="robot-img">
 
   <div class="hero-text">
-    <h1>🤖 Welcome to My Portfolio</h1>
+    <h1>Welcome to My Site!</h1>
     <h2>Mechanical Engineering Undergraduate</h2>
     <p>
-      Hi! I'm Sri Visnu S. I specialize in Mechanical Design,
-      CAD modeling, and Manufacturing innovation.
-      Scroll down to explore my journey.
+      3rd Year (6th Semester) student at College of Engineering, Guindy – Anna University,
+      focused on mechanical design, CAD modeling and manufacturing systems.
     </p>
   </div>
-
-</div>
+</section>
 
 <section id="about">
-  <h2>About Me</h2>
+  <h2>Profile Summary</h2>
   <div class="card">
-    Motivated Mechanical Engineering student with strong foundation
-    in design, injection mould development, and mechanical systems.
+    Motivated Mechanical Engineering student with academic project experience in injection mould design and mechanism development.
+    Skilled in AutoCAD, SolidWorks, CREO and Inventor with strong analytical and problem-solving abilities.
+  </div>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <div class="grid">
+    <div class="card">B.E Mechanical Engineering – CEG, Anna University | CGPA 7.02 | 2027</div>
+    <div class="card">Diploma (Tool & Die) – 90% | 2024</div>
+    <div class="card">SSLC – Completed 2021</div>
   </div>
 </section>
 
 <section id="skills">
   <h2>Technical Skills</h2>
-  <div class="card">Mechanical Design</div>
-  <div class="card">AutoCAD</div>
-  <div class="card">SolidWorks</div>
-  <div class="card">CREO</div>
+  <div class="grid">
+    <div class="card">Mechanical Design</div>
+    <div class="card">AutoCAD</div>
+    <div class="card">SolidWorks</div>
+    <div class="card">CREO</div>
+    <div class="card">Inventor</div>
+    <div class="card">Manufacturing Basics</div>
+  </div>
 </section>
 
 <section id="contact">
   <h2>Contact</h2>
   <div class="card">
-    Email: srivisnusankar@gmail.com<br>
+    Email: srivisnusankar@gmail.com<br><br>
     Phone: +91 8015772005
   </div>
 </section>
 
 <footer>
-  © 2026 Sri Visnu S | Mechanical Engineering Portfolio
+© 2026 Sri Visnu S | Mechanical Engineering Portfolio
 </footer>
 
 <script>
-// Scroll reveal animation
+// Scroll Reveal Animation
 const cards = document.querySelectorAll('.card');
 
 window.addEventListener('scroll', () => {
   const trigger = window.innerHeight * 0.85;
-
   cards.forEach(card => {
     const top = card.getBoundingClientRect().top;
     if(top < trigger){
