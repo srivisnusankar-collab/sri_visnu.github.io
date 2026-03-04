@@ -40,7 +40,6 @@ nav a:hover{color:var(--blue)}
   position:relative;
 }
 
-/* Animated Glow Line */
 .hero::before{
   content:"";
   position:absolute;
@@ -56,7 +55,6 @@ nav a:hover{color:var(--blue)}
   to{opacity:1;width:70%}
 }
 
-/* Robot */
 .robot-img{
   width:380px;
   animation:float 4s ease-in-out infinite alternate;
@@ -68,10 +66,7 @@ nav a:hover{color:var(--blue)}
   to{transform:translateY(-25px)}
 }
 
-/* Text Side */
-.hero-text{
-  max-width:550px;
-}
+.hero-text{max-width:550px;}
 
 .hero-text h1{
   font-size:3rem;
@@ -105,7 +100,6 @@ nav a:hover{color:var(--blue)}
   to{opacity:1;transform:translateY(0)}
 }
 
-/* Sections */
 section{
   padding:100px 12%;
   position:relative;
@@ -128,7 +122,6 @@ section h2::after{
   animation:glowline 3s infinite alternate;
 }
 
-/* Cards */
 .card{
   background:var(--card);
   padding:30px;
@@ -151,14 +144,12 @@ section h2::after{
   transform:translateY(0);
 }
 
-/* Grid */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:30px;
 }
 
-/* Footer */
 footer{
   text-align:center;
   padding:40px;
@@ -166,7 +157,6 @@ footer{
   border-top:1px solid #222;
 }
 
-/* Responsive */
 @media(max-width:900px){
   .hero{flex-direction:column;text-align:center}
   .robot-img{width:250px}
@@ -181,6 +171,7 @@ footer{
   <div>
     <a href="#about">About</a>
     <a href="#education">Education</a>
+    <a href="#internship">Internship</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#hobbies">Hobbies</a>
@@ -190,7 +181,6 @@ footer{
 
 <section class="hero">
   <img src="robot.png" alt="Robot Welcome" class="robot-img">
-
   <div class="hero-text">
     <h1>SRI VISNU S</h1>
     <h2>Mechanical Engineering Undergraduate</h2>
@@ -211,7 +201,6 @@ footer{
 
 <section id="education">
   <h2>Education</h2>
-  <div class="divider"></div>
   <div class="grid">
     <div class="card">
       <h3>🎓 B.E Mechanical Engineering</h3>
@@ -231,21 +220,43 @@ footer{
   </div>
 </section>
 
-
-<section id="skills">
-  <h2>Technical Skills</h2>
-    <div class="card">📐 AutoCAD</div>
-    <div class="card">⚙ SolidWorks</div>
-    <div class="card">🔩 CREO</div>
-    <div class="card">🧩 Autodesk Inventor</div>
-    <div class="card">📊 MS Office & Documentation</div>
-    <div class="card">🐍 Python (Basic)</div>
+<section id="internship">
+  <h2>Internship Experience</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>🖨️ 3D Printing Internship</h3>
+      <p><strong>Ramakrishna College of Engineering, Coimbatore</strong></p>
+      <p>Duration: 1 Week</p>
+      <p>
+       Completed a hands-on internship focused on Additive Manufacturing and 3D Printing technologies.
+        Gained practical experience in STL file preparation, slicing software, printer setup and calibration, material handling, and print quality optimization.
+         Developed an understanding of rapid prototyping techniques and their applications in product design and development.
+      </p>
+    </div>
+    <div class="card">
+      <h3>🏭 Injection Moulding Internship</h3>
+      <p><strong>Viji Plastik Product, Dindigul</strong></p>
+      <p>
+        Undertook industrial training in a manufacturing environment specializing in injection moulding processes.
+         Gained exposure to injection moulding machine operations, mould structure and components, plastic material selection, and process parameter control.
+         Observed production workflow, cycle time optimization, and basic quality inspection procedures. This internship enhanced my understanding of real-time manufacturing systems and industrial production practices.
+      </p>
+    </div>
   </div>
 </section>
 
-  <section id="projects">
+<section id="skills">
+  <h2>Technical Skills</h2>
+  <div class="card">📐 AutoCAD</div>
+  <div class="card">⚙ SolidWorks</div>
+  <div class="card">🔩 CREO</div>
+  <div class="card">🧩 Autodesk Inventor</div>
+  <div class="card">📊 MS Office & Documentation</div>
+  <div class="card">🐍 Python (Basic)</div>
+</section>
+
+<section id="projects">
   <h2>Projects</h2>
-  <div class="divider"></div>
   <div class="grid">
     <div class="card">
       <h3>Multi-Cavity Injection Mould</h3>
@@ -257,10 +268,9 @@ footer{
     </div>
   </div>
 </section>
-  
+
 <section id="hobbies">
   <h2>Hobbies</h2>
-  <div class="divider"></div>
   <div class="grid">
     <div class="card">🏸 Badminton</div>
     <div class="card">🏏 Cricket</div>
@@ -272,19 +282,19 @@ footer{
 
 <section id="contact">
   <h2>Contact</h2>
-  <div class="divider"></div>
-  <div class="card contact-card">
+  <div class="card">
     📧 <a href="mailto:srivisnusankar@gmail.com">srivisnusankar@gmail.com</a><br><br>
     📱 <a href="tel:+918015772005">+91 8015772005</a><br><br>
     🔗 <a href="https://www.linkedin.com/in/sri-visnu-s-20b4ba211" target="_blank">LinkedIn Profile</a>
+  </div>
+</section>
+
 <footer>
 © 2026 Sri Visnu S | Mechanical Engineering Portfolio
 </footer>
 
 <script>
-// Scroll Reveal Animation
 const cards = document.querySelectorAll('.card');
-
 window.addEventListener('scroll', () => {
   const trigger = window.innerHeight * 0.85;
   cards.forEach(card => {
