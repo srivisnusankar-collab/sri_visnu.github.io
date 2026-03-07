@@ -167,11 +167,51 @@ footer{
   .hero{flex-direction:column;text-align:center}
   .robot-img{width:250px}
 }
+  /* Animated Background Particles */
+.particles{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  z-index:-1;
+  overflow:hidden;
+}
+
+.particles span{
+  position:absolute;
+  display:block;
+  width:4px;
+  height:4px;
+  background:rgba(255,255,255,0.15);
+  border-radius:50%;
+  animation:moveParticles 25s linear infinite;
+}
+
+@keyframes moveParticles{
+  from{
+    transform:translateY(0);
+  }
+  to{
+    transform:translateY(-100vh);
+  }
+}
 </style>
 </head>
 
 <body>
-
+<div class="particles">
+<span style="left:5%;animation-duration:18s"></span>
+<span style="left:15%;animation-duration:22s"></span>
+<span style="left:25%;animation-duration:26s"></span>
+<span style="left:35%;animation-duration:20s"></span>
+<span style="left:45%;animation-duration:28s"></span>
+<span style="left:55%;animation-duration:24s"></span>
+<span style="left:65%;animation-duration:30s"></span>
+<span style="left:75%;animation-duration:21s"></span>
+<span style="left:85%;animation-duration:27s"></span>
+<span style="left:95%;animation-duration:19s"></span>
+</div>
 <nav>
   <div style="color:var(--gold);font-weight:600">Sri Visnu S</div>
   <div>
@@ -199,11 +239,11 @@ Motivated Mechanical Engineering student at the College of Engineering, Guindy �
 <section id="about">
   <h2>Profile Summary</h2>
   <div class="card">
+    <p>
 Motivated Mechanical Engineering student at the College of Engineering, Guindy – Anna University, one of India's leading engineering institutions. Possesses practical exposure through academic projects and industrial internships in areas such as injection moulding and additive manufacturing.
-
 Skilled in CAD modeling and engineering design using tools like AutoCAD, SolidWorks, CREO, and Autodesk Inventor. Familiar with manufacturing processes, product development concepts, and basic workshop practices.
-
 A dedicated learner with strong analytical thinking, teamwork, and problem-solving abilities. Seeking opportunities to apply mechanical engineering knowledge and gain hands-on experience in design, manufacturing, and production industries. 🚀
+ <p>
   </div>
 </section>
 
