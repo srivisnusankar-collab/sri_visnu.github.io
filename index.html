@@ -9,239 +9,171 @@
 
 <style>
 :root{
-  --bg:#0a0a0a;
-  --text:#f5f5f5;
-  --muted:#b0b0b0;
-  --gold:#f5b942;
-  --blue:#4da6ff;
-  --card:#141414;
+ --bg:#0a0a0a;
+ --text:#f5f5f5;
+ --muted:#b0b0b0;
+ --gold:#f5b942;
+ --blue:#4da6ff;
+ --card:#141414;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
 
-/* Animated gradient background */
-body{
-  background:linear-gradient(270deg,#0a0a0a,#111,#0a0a0a);
-  background-size:600% 600%;
-  animation:gradientMove 12s ease infinite;
-  color:var(--text);
-  overflow-x:hidden;
-}
-
-@keyframes gradientMove{
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
-}
-
-/* Engineering grid background */
-body::before{
-  content:"";
-  position:fixed;
-  width:100%;
-  height:100%;
-  top:0;
-  left:0;
-  background-image:
-  linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-  linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size:60px 60px;
-  z-index:-2;
-}
-
-/* Floating particles */
-.particles{
-  position:fixed;
-  width:100%;
-  height:100%;
-  top:0;
-  left:0;
-  z-index:-1;
-}
-
-.particles span{
-  position:absolute;
-  width:4px;
-  height:4px;
-  background:rgba(255,255,255,0.15);
-  border-radius:50%;
-  animation:moveParticles 25s linear infinite;
-}
-
-@keyframes moveParticles{
-  from{transform:translateY(0)}
-  to{transform:translateY(-100vh)}
-}
+body{background:var(--bg);color:var(--text);overflow-x:hidden}
 
 /* NAV */
 nav{
-  position:fixed;width:100%;top:0;background:#000;
-  padding:15px 12%;display:flex;justify-content:space-between;
-  align-items:center;border-bottom:1px solid #222;z-index:1000;
+ position:fixed;width:100%;top:0;background:#000;
+ padding:15px 12%;display:flex;justify-content:space-between;
+ align-items:center;border-bottom:1px solid #222;z-index:1000;
 }
 
-nav a{
-  color:var(--text);
-  text-decoration:none;
-  margin-left:22px;
-  transition:0.3s
-}
+nav a{color:var(--text);text-decoration:none;margin-left:22px;transition:0.3s}
 
 nav a:hover{color:var(--blue)}
 
 /* HERO */
 .hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:80px;
-  padding:0 10%;
-  position:relative;
+ min-height:100vh;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ gap:80px;
+ padding:0 10%;
+ position:relative;
 }
 
 .hero::before{
-  content:"";
-  position:absolute;
-  bottom:60px;
-  width:60%;
-  height:3px;
-  background:linear-gradient(90deg,var(--gold),var(--blue));
-  animation:glowline 3s infinite alternate;
+ content:"";
+ position:absolute;
+ bottom:60px;
+ width:60%;
+ height:3px;
+ background:linear-gradient(90deg,var(--gold),var(--blue));
+ animation:glowline 3s infinite alternate;
 }
 
 @keyframes glowline{
-  from{opacity:0.3;width:40%}
-  to{opacity:1;width:70%}
+ from{opacity:0.3;width:40%}
+ to{opacity:1;width:70%}
 }
 
 .robot-img{
-  width:380px;
-  animation:float 4s ease-in-out infinite alternate;
-  filter:drop-shadow(0 0 25px rgba(77,166,255,0.6));
+ width:380px;
+ animation:float 4s ease-in-out infinite alternate;
+ filter:drop-shadow(0 0 25px rgba(77,166,255,0.6));
 }
 
 @keyframes float{
-  from{transform:translateY(0)}
-  to{transform:translateY(-25px)}
+ from{transform:translateY(0)}
+ to{transform:translateY(-25px)}
 }
 
 .hero-text{max-width:550px;}
 
 .hero-text h1{
-  font-size:3rem;
-  color:var(--gold);
-  opacity:0;
-  transform:translateX(50px);
-  animation:slideIn 1.5s forwards;
+ font-size:3rem;
+ color:var(--gold);
+ opacity:0;
+ transform:translateX(50px);
+ animation:slideIn 1.5s forwards;
 }
 
 .hero-text h2{
-  margin-top:15px;
-  color:var(--blue);
-  font-weight:400;
-  opacity:0;
-  animation:fadeUp 2s forwards;
+ margin-top:15px;
+ color:var(--blue);
+ font-weight:400;
+ opacity:0;
+ animation:fadeUp 2s forwards;
 }
 
 .hero-text p{
-  margin-top:20px;
-  color:var(--muted);
-  opacity:0;
-  animation:fadeUp 2.5s forwards;
+ margin-top:20px;
+ color:var(--muted);
+ opacity:0;
+ animation:fadeUp 2.5s forwards;
 }
 
 @keyframes slideIn{
-  to{opacity:1;transform:translateX(0)}
+ to{opacity:1;transform:translateX(0)}
 }
 
 @keyframes fadeUp{
-  from{opacity:0;transform:translateY(20px)}
-  to{opacity:1;transform:translateY(0)}
+ from{opacity:0;transform:translateY(20px)}
+ to{opacity:1;transform:translateY(0)}
 }
 
 section{
-  padding:100px 12%;
+ padding:100px 12%;
+ position:relative;
 }
 
 section h2{
-  font-size:2.5rem;
-  color:var(--gold);
-  margin-bottom:10px;
+ font-size:2.5rem;
+ color:var(--gold);
+ margin-bottom:10px;
+ position:relative;
 }
 
 section h2::after{
-  content:"";
-  display:block;
-  width:80px;
-  height:4px;
-  margin-top:10px;
-  background:linear-gradient(90deg,var(--gold),var(--blue));
-  animation:glowline 3s infinite alternate;
+ content:"";
+ display:block;
+ width:80px;
+ height:4px;
+ margin-top:10px;
+ background:linear-gradient(90deg,var(--gold),var(--blue));
+ animation:glowline 3s infinite alternate;
 }
 
 .card{
-  background:var(--card);
-  padding:30px;
-  border-radius:18px;
-  border:1px solid #222;
-  margin-top:25px;
-  opacity:0;
-  transform:translateY(40px);
-  transition:1s;
-  box-shadow:0 0 20px rgba(0,0,0,0.5);
+ background:var(--card);
+ padding:30px;
+ border-radius:18px;
+ border:1px solid #222;
+ margin-top:25px;
+ opacity:0;
+ transform:translateY(40px);
+ transition:1s;
+ box-shadow:0 0 20px rgba(0,0,0,0.5);
 }
 
 .card:hover{
-  transform:translateY(-10px);
-  box-shadow:0 0 25px rgba(77,166,255,0.3);
+ transform:translateY(-10px);
+ box-shadow:0 0 25px rgba(77,166,255,0.3);
 }
 
 .card.show{
-  opacity:1;
-  transform:translateY(0);
+ opacity:1;
+ transform:translateY(0);
 }
 
 .card img{
-  width:100%;
-  border-radius:12px;
-  margin-bottom:15px;
+ width:100%;
+ border-radius:12px;
+ margin-bottom:15px;
 }
 
 .grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:30px;
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+ gap:30px;
 }
 
 footer{
-  text-align:center;
-  padding:40px;
-  color:var(--muted);
-  border-top:1px solid #222;
+ text-align:center;
+ padding:40px;
+ color:var(--muted);
+ border-top:1px solid #222;
 }
 
 @media(max-width:900px){
-  .hero{flex-direction:column;text-align:center}
-  .robot-img{width:250px}
+ .hero{flex-direction:column;text-align:center}
+ .robot-img{width:250px}
 }
 </style>
 </head>
 
 <body>
-
-<div class="particles">
-<span style="left:5%;animation-duration:18s"></span>
-<span style="left:15%;animation-duration:22s"></span>
-<span style="left:25%;animation-duration:26s"></span>
-<span style="left:35%;animation-duration:20s"></span>
-<span style="left:45%;animation-duration:28s"></span>
-<span style="left:55%;animation-duration:24s"></span>
-<span style="left:65%;animation-duration:30s"></span>
-<span style="left:75%;animation-duration:21s"></span>
-<span style="left:85%;animation-duration:27s"></span>
-<span style="left:95%;animation-duration:19s"></span>
-</div>
 
 <nav>
 <div style="color:var(--gold);font-weight:600">Sri Visnu S</div>
@@ -257,58 +189,83 @@ footer{
 </nav>
 
 <section class="hero">
-<img src="robot.png" class="robot-img">
+
+<img src="robot.png" alt="Robot Welcome" class="robot-img">
 
 <div class="hero-text">
+
 <h1>SRI VISNU S</h1>
 <h2>Mechanical Engineering Undergraduate</h2>
 
 <p>
-Motivated Mechanical Engineering student at the College of Engineering, Guindy – Anna University with hands-on experience through academic projects and industrial internships. Skilled in CAD tools such as AutoCAD, SolidWorks, CREO, and Inventor with strong interest in design and manufacturing.
+Motivated Mechanical Engineering student at the College of Engineering, Guindy – Anna University with hands-on experience through academic projects and industrial internships. Skilled in CAD tools such as AutoCAD, SolidWorks, CREO, and Inventor, with a strong interest in mechanical design, manufacturing, and production systems. Dedicated to learning new technologies and applying engineering fundamentals in real-world applications. 🚀
 </p>
 
 </div>
 </section>
 
 <section id="about">
+
 <h2>Profile Summary</h2>
 
 <div class="card">
 
-<ul style="line-height:1.8;color:var(--muted)">
-
-<li>Mechanical Engineering student at College of Engineering, Guindy – Anna University.</li>
-
-<li>Hands-on experience through industrial internships in additive manufacturing and injection moulding.</li>
-
-<li>Skilled in CAD tools including AutoCAD, SolidWorks, CREO and Autodesk Inventor.</li>
-
-<li>Familiar with manufacturing processes, product development and workshop practices.</li>
-
-<li>Strong analytical thinking, teamwork and problem-solving abilities.</li>
-
-<li>Seeking opportunities in mechanical design, manufacturing and production industries.</li>
-
-</ul>
+<p>
+Motivated Mechanical Engineering student at the College of Engineering, Guindy, one of India's leading engineering institutions. Possesses practical exposure through academic projects and industrial internships in areas such as injection moulding and additive manufacturing. Skilled in CAD modeling and engineering design using tools like AutoCAD, SolidWorks, CREO, and Autodesk Inventor. Familiar with manufacturing processes, product development concepts, and basic workshop practices. A dedicated learner with strong analytical thinking, teamwork, and problem-solving abilities. Seeking opportunities to apply mechanical engineering knowledge and gain hands-on experience in design, manufacturing, and production industries. 🚀
+</p>
 
 </div>
 </section>
 
-<!-- Rest of your code remains SAME -->
+<!-- REST OF YOUR CODE REMAINS EXACTLY SAME -->
+
+<section id="education">
+<h2>Education</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>🎓 B.E Mechanical Engineering</h3>
+<p>College of Engineering, Guindy – Anna University</p>
+<p>CGPA: 7.02 | PRESENT</p>
+</div>
+
+<div class="card">
+<h3>🛠 Diploma (Tool & Die)</h3>
+<p>Institute of Tool Engineering, Dindigul</p>
+<p>90% | Pass Out: 2024</p>
+</div>
+
+<div class="card">
+<h3>🏫 SSLC</h3>
+<p>MSP Solainadar Memorial Hr. Sec. School</p>
+<p>Pass Out: 2021</p>
+</div>
+
+</div>
+</section>
+
+<footer>
+© 2026 Sri Visnu S | Mechanical Engineering Portfolio
+</footer>
 
 <script>
 const cards = document.querySelectorAll('.card');
 
 window.addEventListener('scroll', () => {
+
 const trigger = window.innerHeight * 0.85;
 
 cards.forEach(card => {
+
 const top = card.getBoundingClientRect().top;
 
 if(top < trigger){
 card.classList.add('show');
 }
+
 });
+
 });
 </script>
 
